@@ -269,34 +269,7 @@ void precomp() {
 }
 
 void AliF_solve() {
-    int n; cin>>n;
     
-    int ans = 0;
-
-    while(n) {
-        if(n>=100) {
-            ans++;
-            n-=100;
-        }
-        else if(n<100 && n>=20) {
-            ans++;
-            n-=20;
-        }
-        else if(n<20 && n>=10) {
-            ans++;
-            n-=10;
-        }
-        else if(n<10 && n>=5) {
-            ans++;
-            n-=5;
-        }
-        else if(n<5 && n>=0) {
-            ans+=n;
-            n=0;
-        }
-    }
-    cout<<ans<<endl;
-
     return;
 }
 
