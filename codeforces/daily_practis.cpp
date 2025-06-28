@@ -269,21 +269,21 @@ void precomp() {
 }
 
 void AliF_solve() {
-    int a, b, c; cin>>a>>b>>c;
-
-    int ans=0;
-    int mx1 = (a+b)*c;
-    int mx2 = a*(b+c);
-    int mx3 = a*b*c;
-    int mx4 = a+b+c;
-
-    ans = max(mx1,max(mx2,max(mx3,mx4)));
-
-    // ans = 
-    // ans=a*(b+c);
-    // ans=a*b*c;
-    cout<<ans<<endl;
-
+    int n; cin>>n;
+    vector<prii> tem;
+    for(int i=0; i<n; i++) {
+        int a, b; cin>>a>>b;
+        tem.pb({a, b}); 
+    }
+    int ctn=0;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            if(tem[i].F == tem[j].S) {
+                ctn++;
+            }
+        }
+    }
+    cout<<ctn<<endl;
     return;
 }
 
