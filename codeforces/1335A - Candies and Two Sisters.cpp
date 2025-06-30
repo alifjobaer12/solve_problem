@@ -269,30 +269,9 @@ void precomp() {
 }
 
 void AliF_solve() {
-    string a; cin>>a;
-
-    int u=0, l=0;
-    for(int i=1; i<a.size(); i++) {
-        if(a[i]<='Z' && a[i]>='A') u++;
-        else l=1;
-    }
-    if (l & u){
-        cout<<a<<endl;
-        return;
-    }
-    else {
-        if(u==a.size()-1) {
-            if(a[0]<='Z' && a[0]>='A') {
-                a[0] = tolower(a[0]);
-            }
-            else a[0]=toupper(a[0]);
-            for(int i=1; i<a.size(); i++) {
-                a[i]=tolower(a[i]);
-            }
-        }
-        
-    }
-    cout<<a<<endl;
+    int n; cin>>n;
+    int ans = ceil(n, 2);
+    cout<<ans-1<<endl;
     return;
 }
 
@@ -304,11 +283,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    // t_c {
+    t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    // }
+    }
     
     return 0;
 }
