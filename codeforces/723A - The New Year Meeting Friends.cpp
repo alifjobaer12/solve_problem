@@ -268,24 +268,26 @@ void precomp() {
     return;
 }
 
-bool isPrime(int n) {
-    if (n <= 1) return false;          
-    if (n == 2 || n == 3) return true; 
-    if (n % 2 == 0 || n % 3 == 0) return false;
-
-    for (int i = 5; i <= sqrt(n); i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    }
-
-    return true;
-}
-
 void AliF_solve() {
-    int n; cin>>n;
-    if(n%4==0) cout<<"Bob"<<endl;
-    else cout<<"Alice"<<endl;
- 
+    int a, b, c; cin>>a>>b>>c;
+    // int mp = (a+b+c)/3;
+    
+    int ans1 = 0;
+    int ans2 = 0;
+    int ans3 = 0;
+
+    ans1 += abs(a-b);
+    ans1 += abs(a-c);
+
+    ans2 += abs(b-a);
+    ans2 += abs(b-c);
+
+    ans3 += abs(b-c);
+    ans3 += abs(a-c);
+
+    int ans = min(ans1, min(ans2, ans3));
+
+    cout<<ans<<endl;
     return;
 }
 
@@ -297,11 +299,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    t_c {
+    // t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    }
+    // }
     
     return 0;
 }

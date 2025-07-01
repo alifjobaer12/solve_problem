@@ -268,24 +268,12 @@ void precomp() {
     return;
 }
 
-bool isPrime(int n) {
-    if (n <= 1) return false;          
-    if (n == 2 || n == 3) return true; 
-    if (n % 2 == 0 || n % 3 == 0) return false;
-
-    for (int i = 5; i <= sqrt(n); i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    }
-
-    return true;
-}
-
 void AliF_solve() {
-    int n; cin>>n;
-    if(n%4==0) cout<<"Bob"<<endl;
-    else cout<<"Alice"<<endl;
- 
+    int a, b, c; cin>>a>>b>>c;
+    if(a+b==c) yes
+    else if(c+b==a) yes
+    else if(a+c==b) yes
+    else no
     return;
 }
 
