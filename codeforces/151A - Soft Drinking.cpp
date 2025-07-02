@@ -1,3 +1,6 @@
+// https://codeforces.com/problemset/problem/151/A
+
+
 //             starting with the name of almighty ALLAH           //
 //                   ~ HI I'M alifjobaer12 ~                      //
 //              ^.^  TARGET NEXT ICPC REGION  ^.^                 //

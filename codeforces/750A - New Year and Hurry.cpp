@@ -1,3 +1,5 @@
+// https://codeforces.com/problemset/problem/750/A
+
 //             starting with the name of almighty ALLAH           //
 //                   ~ HI I'M alifjobaer12 ~                      //
 //              ^.^  TARGET NEXT ICPC REGION  ^.^                 //
@@ -282,14 +284,37 @@ bool isPrime(int n) {
 }
 
 void AliF_solve() {
-    int n, k, l, c, d, p, nl, np; cin>>n>> k>> l>> c>> d>> p>> nl>> np;
+    int n, k; cin>>n>>k;
+    int h = k/60;
+    int m = k%60;
+    int th = 20 + h;
+    int tm = m + 0;
 
-    int dl = (k*l)/(n*nl);
-    int lla = (c*d)/n*1;
-    int sa = p/(n*np);
+    int rh = 23 - th;
+    int rm = 60 - tm;
 
-    // cout<<dl<<" "<<lla<<" "<<sa<<endl;
-    int ans = min(dl, min(lla, sa));
+    int trhm = (rh*60) + rm;
+
+    // cout<<trhm<<endl;
+
+    int ans = 0;
+    for(int i=1; ans<=trhm && i<=n; i++) {
+        ans += 5*i;
+
+        if(ans>trhm) {
+            cout<<i-1<<endl;
+            return;
+        } 
+        if(ans==trhm) {
+            cout<<i<<endl;
+            return;
+        }
+        if(i>=n) ans = n;
+        // if(i>=n) {
+        //     cout<<n<<endl;
+        //     return;
+        // }
+    }
     cout<<ans<<endl;
     return;
 }
