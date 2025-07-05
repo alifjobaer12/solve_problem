@@ -1,3 +1,6 @@
+// https://codeforces.com/problemset/problem/381/A
+
+
 //             starting with the name of almighty ALLAH           //
 //                   ~ HI I'M alifjobaer12 ~                      //
 //              ^.^  TARGET NEXT ICPC REGION  ^.^                 //
@@ -282,7 +285,46 @@ bool isPrime(int n) {
 }
 
 void AliF_solve() {
+    int n; cin>>n;
+    int a[n]; arr_in(a, n);
+
+    int s = 0, st = 1, d = 0, dt = 0;
+
+    int i=0, j=n-1;
+    while(i<=j) {
+        if(st) {
+            if(a[i] >= a[j]) {
+                s += a[i];
+                a[i] = 0;
+                i++;
+            }
+            else {
+                s += a[j];
+                a[j] = 0;
+                j--;
+
+            }
+            st = 0;
+            dt = 1;
+        }
+        else if(dt) {
+            if(a[i] >= a[j]) {
+                d += a[i];
+                a[i] = 0;
+                i++;
+            }
+            else {
+                d += a[j];
+                a[j] = 0;
+                j--;
     
+            }
+            dt = 0;
+            st = 1;
+        }
+    }
+
+    cout<<s<<" "<<d<<endl;
     return;
 }
 
