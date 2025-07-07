@@ -253,16 +253,11 @@ void precomp() {
 }
 
 void AliF_solve() {
-    int n; cin>>n;
-    int a[n];
-    string a = "alif";
-    int min=INT_MAX;
-    for(int i=0; i<n; i++) {
-        cin>>a[i];
-        int b = abs(a[i]);
-        if(min>b) min=b;
-    }
-    cout<<min<<endl;
+    int n, m; cin>>n>>m;
+    
+    if (m > n ) cout<<"No"<<endl;
+    else if ( (n >= m) && ((n-m) % 2 == 0) ) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
 
     return;
 }
@@ -275,11 +270,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    //t_c {
+    t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    //}
+    }
     
     return 0;
 }
