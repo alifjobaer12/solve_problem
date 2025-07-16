@@ -294,11 +294,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    // t_c {
+    t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    // }
+    }
     
     return 0;
 }
