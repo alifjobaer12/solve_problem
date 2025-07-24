@@ -340,22 +340,32 @@ void AliF_solve()
     int n;
     cin >> n;
 
-    string a, b;
-    cin >> a >> b;
-
-    int ctn = 0;
-
-    for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
+    if (n > 0) {
+        cout << n << endl;
+        return;
     }
 
-    if (ctn)
-        no else yes
+    string a = to_string(n);
+    string t;
+    int ln1 = a[a.size() - 1] - '0';
+    int ln2 = a[a.size() - 2] - '0';
 
-            return;
+    if (ln1 < ln2) {
+        for (int i = 0; i < a.size(); i++) {
+            if (i == a.size() - 2)
+                continue;
+            t.pb(a[i]);
+        }
+    } else {
+        for (int i = 0; i < a.size(); i++) {
+            if (i == a.size() - 1)
+                continue;
+            t.pb(a[i]);
+        }
+    }
+    int ans = stoi(t);
+    cout << ans << endl;
+    return;
 }
 
 int32_t main()
@@ -367,12 +377,11 @@ int32_t main()
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    t_c
-    {
-        // cout << "Case #" << tc << ": ";
-        // cout << "Case " << tc << ": ";
-        AliF_solve();
-    }
+    // t_c {
+    // cout << "Case #" << tc << ": ";
+    // cout << "Case " << tc << ": ";
+    AliF_solve();
+    // }
 
     return 0;
 }

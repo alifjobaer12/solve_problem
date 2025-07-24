@@ -340,22 +340,17 @@ void AliF_solve()
     int n;
     cin >> n;
 
-    string a, b;
-    cin >> a >> b;
+    int c1, c2, ans;
+    c1 = n / 3;
+    c2 = n / 3;
 
-    int ctn = 0;
+    if (n % 3 == 1)
+        c1++;
+    else if (n % 3 == 2)
+        c2++;
 
-    for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
-    }
-
-    if (ctn)
-        no else yes
-
-            return;
+    cout << c1 << " " << c2 << endl;
+    return;
 }
 
 int32_t main()

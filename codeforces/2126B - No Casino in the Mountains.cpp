@@ -337,25 +337,30 @@ bool isPrime(int n)
 
 void AliF_solve()
 {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
+    int a[n];
+    arr_in(a, n);
 
-    string a, b;
-    cin >> a >> b;
-
-    int ctn = 0;
+    int ctn = 1, ans = 0;
 
     for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
+        if (a[i] == 0) {
+            if (ctn == k) {
+                ans++;
+                i++;
+                ctn = 0;
+            }
+        }
+        if (a[i] == 1) {
+            ctn = 0;
+            // continue;
+        }
+        ctn++;
     }
 
-    if (ctn)
-        no else yes
-
-            return;
+    cout << ans << endl;
+    return;
 }
 
 int32_t main()

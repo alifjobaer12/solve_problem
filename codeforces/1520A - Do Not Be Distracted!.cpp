@@ -339,23 +339,27 @@ void AliF_solve()
 {
     int n;
     cin >> n;
+    string a;
+    cin >> a;
 
-    string a, b;
-    cin >> a >> b;
-
-    int ctn = 0;
-
+    vector<char> t;
     for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
+        if (a[i] != a[i + 1])
+            t.pb(a[i]);
     }
 
-    if (ctn)
-        no else yes
+    // cout<<t<<" ";
+    map<char, int> freq;
+    for (int i = 0; i < t.size(); i++) {
+        freq[t[i]]++;
+        if (freq[t[i]] > 1) {
+            no return;
+        }
+    }
+    yes
+        // cout<<freq<<" ";
 
-            return;
+        return;
 }
 
 int32_t main()

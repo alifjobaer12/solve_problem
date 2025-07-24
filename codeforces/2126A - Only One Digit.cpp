@@ -3,64 +3,82 @@
 //              ^.^  TARGET NEXT ICPC REGION  ^.^                 //
 
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp> // Common file
-#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_bit.add
 #include <unistd.h>
-
-// #include <ext/pb_ds/detail/standard_policies.hpp>
+// #include <ext/pb_ds/assoc_container.hpp> // Common file
+// #include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_bit.add
+//  #include <ext/pb_ds/detail/standard_policies.hpp>
 #include <random>
 
 using namespace std;
-using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 
-void __print(int x) { cerr << x; }
-void __print(long x) { cerr << x; }
-void __print(long long x) { cerr << x; }
-void __print(unsigned x) { cerr << x; }
-void __print(unsigned long x) { cerr << x; }
-void __print(unsigned long long x) { cerr << x; }
-void __print(float x) { cerr << x; }
-void __print(double x) { cerr << x; }
-void __print(long double x) { cerr << x; }
-void __print(char x) { cerr << '\'' << x << '\''; }
-void __print(const char* x) { cerr << '\"' << x << '\"'; }
-void __print(const string& x) { cerr << '\"' << x << '\"'; }
-void __print(bool x) { cerr << (x ? "true" : "false"); }
+void __print(int x)
+{
+    cerr << x;
+}
+void __print(long x)
+{
+    cerr << x;
+}
+void __print(long long x)
+{
+    cerr << x;
+}
+void __print(unsigned x)
+{
+    cerr << x;
+}
+void __print(unsigned long x)
+{
+    cerr << x;
+}
+void __print(unsigned long long x)
+{
+    cerr << x;
+}
+void __print(float x)
+{
+    cerr << x;
+}
+void __print(double x)
+{
+    cerr << x;
+}
+void __print(long double x)
+{
+    cerr << x;
+}
+void __print(char x)
+{
+    cerr << '\'' << x << '\'';
+}
+void __print(const char* x)
+{
+    cerr << '\"' << x << '\"';
+}
+void __print(const string& x)
+{
+    cerr << '\"' << x << '\"';
+}
+void __print(bool x)
+{
+    cerr << (x ? "true" : "false");
+}
 
-template <typename T, typename V>
-void __print(const pair<T, V>& x)
-{
-    cerr << '{';
-    __print(x.first);
-    cerr << ',';
-    __print(x.second);
-    cerr << '}';
-}
-template <typename T>
-void __print(const T& x)
-{
-    int f = 0;
-    cerr << '{';
-    for (auto& i : x)
-        cerr << (f++ ? "," : ""), __print(i);
-    cerr << "}";
-}
-void _print() { cerr << "]\n"; }
+/*
+template<typename T, typename V>
+void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
+template<typename T>
+void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
+void _print() {cerr << "]\n";}
 template <typename T, typename... V>
-void _print(T t, V... v)
-{
-    __print(t);
-    if (sizeof...(v))
-        cerr << ", ";
-    _print(v...);
-}
+void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
 #ifndef ONLINE_JUDGE
-#define debug(x...)               \
-    cerr << "[" << #x << "] = ["; \
-    _print(x)
+#define debug(x...) cerr << "[" << #x << "] = ["; _print(x)
 #else
 #define debug(x...)
 #endif
+*/
 
 #define int ll
 #define ll long long
@@ -115,14 +133,14 @@ const ll infLL = 9000000000000000000;
 const long long M = 2e5 + 10, M2 = 1e6 + 20, oo = 1e9 + 7, mod = 998244353;
 const long long MC = (1 << 20) + 5;
 
-typedef vector<int> vci;
-typedef vector<ll> vcl;
-typedef vector<vci> vvci;
-typedef vector<vcl> vvcl;
-typedef vector<prii> vcii;
-typedef vector<prll> vcll;
-typedef vector<int>::iterator vit;
-typedef set<int>::iterator sit;
+// typedef vector<int> vci;
+// typedef vector<ll> vcl;
+// typedef vector<vci> vvci;
+// typedef vector<vcl> vvcl;
+// typedef vector<prii> vcii;
+// typedef vector<prll> vcll;
+// typedef vector<int>::iterator vit;
+// typedef set<int>::iterator sit;
 
 #define code_firster()                \
     ios_base::sync_with_stdio(false); \
@@ -143,12 +161,11 @@ int dy[] = { +1, -1, 0, 0 };
 int fx[10] = { 1, -1, 0, 0, 1, -1, 1, -1 };
 int fy[10] = { 0, 0, 1, -1, 1, -1, -1, 1 };
 
-template <typename T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+/*
+template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 struct custom_hash {
-    static uint64_t splitmix64(uint64_t x)
-    {
+    static uint64_t splitmix64(uint64_t x) {
         // http://x...content-available-to-author-only...i.it/splitmix64.c
         x += 0x9e3779b97f4a7c15;
         x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
@@ -156,24 +173,22 @@ struct custom_hash {
         return x ^ (x >> 31);
     }
 
-    size_t operator()(uint64_t x) const
-    {
+    size_t operator()(uint64_t x) const {
         static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
         return splitmix64(x + FIXED_RANDOM);
     }
 };
 
 template <typename F, typename S>
-ostream& operator<<(ostream& os, const pair<F, S>& p)
-{
+ostream &operator<<(ostream &os, const pair<F, S> &p) {
     return os << "(" << p.first << ", " << p.second << ")";
 }
 
 template <typename T>
-ostream& operator<<(ostream& os, const vector<T>& v)
-{
+ostream &operator<<(ostream &os, const vector<T> &v) {
     os << "{";
-    for (auto it = v.begin(); it != v.end(); ++it) {
+    for (auto it = v.begin(); it != v.end(); ++it)
+    {
         if (it != v.begin())
             os << ", ";
         os << *it;
@@ -182,10 +197,10 @@ ostream& operator<<(ostream& os, const vector<T>& v)
 }
 
 template <typename T>
-ostream& operator<<(ostream& os, const set<T>& v)
-{
+ostream &operator<<(ostream &os, const set<T> &v) {
     os << "[";
-    for (auto it = v.begin(); it != v.end(); ++it) {
+    for (auto it = v.begin(); it != v.end(); ++it)
+    {
         if (it != v.begin())
             os << ", ";
         os << *it;
@@ -194,10 +209,10 @@ ostream& operator<<(ostream& os, const set<T>& v)
 }
 
 template <typename T>
-ostream& operator<<(ostream& os, const multiset<T>& v)
-{
+ostream &operator<<(ostream &os, const multiset<T> &v) {
     os << "[";
-    for (auto it = v.begin(); it != v.end(); ++it) {
+    for (auto it = v.begin(); it != v.end(); ++it)
+    {
         if (it != v.begin())
             os << ", ";
         os << *it;
@@ -206,10 +221,10 @@ ostream& operator<<(ostream& os, const multiset<T>& v)
 }
 
 template <typename F, typename S>
-ostream& operator<<(ostream& os, const map<F, S>& v)
-{
+ostream &operator<<(ostream &os, const map<F, S> &v) {
     os << "[";
-    for (auto it = v.begin(); it != v.end(); ++it) {
+    for (auto it = v.begin(); it != v.end(); ++it)
+    {
         if (it != v.begin())
             os << ", ";
         os << it->first << " = " << it->second;
@@ -217,31 +232,31 @@ ostream& operator<<(ostream& os, const map<F, S>& v)
     return os << "]";
 }
 
+
 #define dbg(args...)            \
-    do {                        \
+    do                          \
+    {                           \
         cerr << #args << " : "; \
         faltu(args);            \
     } while (0)
 
-void faltu()
-{
+void faltu() {
     cerr << endl;
 }
 
 template <typename T>
-void faltu(T a[], int n)
-{
+void faltu(T a[], int n) {
     for (int i = 0; i < n; ++i)
         cerr << a[i] << ' ';
     cerr << endl;
 }
 
 template <typename T, typename... hello>
-void faltu(T arg, const hello&... rest)
-{
+void faltu(T arg, const hello &...rest) {
     cerr << arg << ' ';
     faltu(rest...);
 }
+*/
 
 bool isok(int x, int y)
 {
@@ -335,33 +350,33 @@ bool isPrime(int n)
     return true;
 }
 
+bool pre(int x, int y, int n)
+{
+    if (n % x == y)
+        return 1;
+    return 0;
+}
+
 void AliF_solve()
 {
     int n;
     cin >> n;
+    int mn = INT_MAX;
 
-    string a, b;
-    cin >> a >> b;
-
-    int ctn = 0;
-
-    for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
+    while (n > 0) {
+        int ln = n % 10;
+        mn = min(mn, ln);
+        n /= 10;
     }
-
-    if (ctn)
-        no else yes
-
-            return;
+    cout << mn << endl;
+    return;
 }
 
 int32_t main()
 {
     code_firster();
-    // file();                          // first create inputf.in && outpuft.out file
+    // file();
+    // first create inputf.in && outpuft.out file
 
     precomp();
     // int T;
@@ -377,4 +392,4 @@ int32_t main()
     return 0;
 }
 
-//                       ~  Thank You  ~                         //
+//                       ~  Thank You  ~                         //=

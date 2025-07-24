@@ -318,44 +318,31 @@ void precomp()
     return;
 }
 
-bool isPrime(int n)
-{
-    if (n <= 1)
-        return false;
-    if (n == 2 || n == 3)
-        return true;
-    if (n % 2 == 0 || n % 3 == 0)
-        return false;
-
-    for (int i = 5; i <= sqrt(n); i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    }
-
-    return true;
-}
-
 void AliF_solve()
 {
     int n;
     cin >> n;
+    string a;
+    cin >> a;
 
-    string a, b;
-    cin >> a >> b;
-
-    int ctn = 0;
-
+    int fb = 0, ans = 0;
+    int sb = 0;
     for (int i = 0; i < n; i++) {
-        if (a[i] == b[i] || ((a[i] == 'G' || a[i] == 'B') && (b[i] == 'G' || b[i] == 'B')))
-            continue;
-        ctn = 1;
-        break;
+
+        if (a[i] == '(') {
+            fb++;
+        } else {
+            if (fb > 0)
+                fb--;
+            else
+                ans++;
+        }
+        // cout<<sb<<" ";
     }
 
-    if (ctn)
-        no else yes
+    cout << ans << endl;
 
-            return;
+    return;
 }
 
 int32_t main()
