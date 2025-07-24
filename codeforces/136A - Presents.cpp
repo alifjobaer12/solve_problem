@@ -283,19 +283,16 @@ bool isPrime(int n) {
 
 void AliF_solve() {
     int n; cin>>n;
+    int a[n]; arr_in(a, n);
 
-    string a, b; cin>>a>>b;
-
-    int ctn=0;
-
+    vector<prii> gift;
     for(int i=0; i<n; i++) {
-        if(a[i]==b[i] || ((a[i]=='G' || a[i]=='B') && (b[i]=='G' || b[i]=='B'))) continue;
-        ctn=1;
-        break;
+        gift.pb({a[i], i+1});
     }
+    sort(gift.begin(), gift.end());
 
-    if(ctn) no
-    else yes
+    for(auto val: gift) cout<<val.S<<" ";
+    cout<<endl;
 
     return;
 }
@@ -308,11 +305,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    t_c {
+    // t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    }
+    // }
     
     return 0;
 }
