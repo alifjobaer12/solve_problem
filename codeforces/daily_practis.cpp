@@ -4,13 +4,13 @@
 
 #include <bits/stdc++.h>
 #include <unistd.h>
-#include <ext/pb_ds/assoc_container.hpp> // Common file
-#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_bit.add
+//#include <ext/pb_ds/assoc_container.hpp> // Common file
+//#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_bit.add
 // #include <ext/pb_ds/detail/standard_policies.hpp>
 #include <random>
 
 using namespace std;
-using namespace __gnu_pbds;
+//using namespace __gnu_pbds;
 
 void __print(int x) {cerr << x;}
 void __print(long x) {cerr << x;}
@@ -26,6 +26,7 @@ void __print(const char *x) {cerr << '\"' << x << '\"';}
 void __print(const string &x) {cerr << '\"' << x << '\"';}
 void __print(bool x) {cerr << (x ? "true" : "false");}
 
+/*
 template<typename T, typename V>
 void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
 template<typename T>
@@ -38,6 +39,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
+*/
 
 #define int ll
 #define ll long long
@@ -81,14 +83,14 @@ const ll infLL = 9000000000000000000;
 const long long M = 2e5 + 10, M2 = 1e6 + 20, oo = 1e9 + 7, mod = 998244353;
 const long long MC = (1 << 20) + 5;
 
-typedef vector<int> vci;
-typedef vector<ll> vcl;
-typedef vector<vci> vvci;
-typedef vector<vcl> vvcl;
-typedef vector<prii> vcii;
-typedef vector<prll> vcll;
-typedef vector<int>::iterator vit;
-typedef set<int>::iterator sit;
+//typedef vector<int> vci;
+//typedef vector<ll> vcl;
+//typedef vector<vci> vvci;
+//typedef vector<vcl> vvcl;
+//typedef vector<prii> vcii;
+//typedef vector<prll> vcll;
+//typedef vector<int>::iterator vit;
+//typedef set<int>::iterator sit;
 
 #define code_firster()                  \
     ios_base::sync_with_stdio(false);   \
@@ -110,6 +112,7 @@ int dy[] = {+1, -1, 0, 0};
 int fx[10] = {1, -1, 0, 0, 1, -1, 1, -1};
 int fy[10] = {0, 0, 1, -1, 1 , -1, -1, 1};
 
+/*
 template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 struct custom_hash {
@@ -180,6 +183,7 @@ ostream &operator<<(ostream &os, const map<F, S> &v) {
     return os << "]";
 }
 
+
 #define dbg(args...)            \
     do                          \
     {                           \
@@ -203,6 +207,7 @@ void faltu(T arg, const hello &...rest) {
     cerr << arg << ' ';
     faltu(rest...);
 }
+*/
 
 bool isok(int x,int y){
     if(x==y) return true;
@@ -283,48 +288,51 @@ bool isPrime(int n) {
 
 void AliF_solve() {
     int n; cin>>n;
-    int a[n][n];
-    for(int i=0; i<n; i++) {
-        for(int j=0; j<n; j++) {
-            cin>>a[i][j];
+    int x[n]; arr_in(x, n);
+    int q; cin>>q;
+    
+    sort(x, x+n);
+    for(int i=0; i<q; i++) {
+        int m, s=0; cin>>m;
+        if(m<x[0]) {
+            cout<<"0"<<endl;
+            continue;
         }
-    }
-
-    int sum = 0;
-    for(int i=0; i<(n+1)/2; i++) {
-        for(int j=0; j<(n+1)/2; j++) {
-            if(a[i][j] < 0) {
-                sum += a[i][j];
-                // cout<<i<<"-"<<j<<" ";
+        
+        int lo=0, hi=n+1;
+        int ans=hi;
+        while(hi>=lo) {
+            int mid = (hi+lo)/2;
+            if(x[mid]==m) {
+                ans=mid+1;
+                break;
+            } 
+            else if(x[mid] > m) {
+                ans=mid;
+                hi=mid-1;
             }
+            else lo=mid+1;
         }
+        cout<<ans<<endl;
     }
-    for(int i=n/2; i<n; i++) {
-        for(int j=n/2; j<n; j++) {
-            if(a[i][j] < 0) {
-                sum += a[i][j];
-                // cout<<i<<"-"<<j<<" ";
-            }
-        }
-    }
-
-    cout<<abs(sum)<<endl;
+    
     return;
 }
 
 int32_t main() {
     code_firster();
-    // file();                          // first create inputf.in && outpuft.out file
+    // file();                          
+    // first create inputf.in && outpuft.out file
 
     precomp();
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    t_c {
+    //t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    }
+    //}
     
     return 0;
 }
