@@ -266,6 +266,8 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 void precomp() {
 
+    // cout<<30%7;
+
     return;
 }
 
@@ -284,16 +286,7 @@ bool isPrime(int n) {
 }
 
 void AliF_solve() {
-    int a, b, n; cin>>a>>b>>n;
-
-    int ctn=0;
-    while(a<=n && b<=n) {
-        if(a<=b) a += b;
-        else b += a;
-        ctn++;
-    }
-    
-    cout<<ctn<<nl;
+    cout<<"alif"<<nl;
     return;
 }
 
@@ -306,11 +299,11 @@ int32_t main() {
     // int T;
     // scanf("%d", &T);
     // while (T--) {
-    t_c {
+    // t_c {
         // cout << "Case #" << tc << ": ";
         // cout << "Case " << tc << ": ";
         AliF_solve();
-    }
+    // }
     
     return 0;
 }
